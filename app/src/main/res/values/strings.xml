@@ -5,4 +5,6 @@
         <string name="file">Ficheiro</string>
         <string name="create_new">Criar</string>
         <string name="open">Abrir</string>
+    <string name="insertcity" />
+        <string name="insertcountry" />
 </resources>
