@@ -33,7 +33,7 @@
 
     </item>
     <item android:id="@+id/alteraraveiro"
-        android:title="Alterar Aveiro"
+        android:title="Alterar"
         app:showAsAction="never">
 
     </item>

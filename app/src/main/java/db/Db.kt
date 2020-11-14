@@ -1,7 +1,7 @@
 package db
 
-import Dao.cidadedao
-import Entity.cidade
+import Dao.notadao
+import Entity.nota
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
@@ -12,10 +12,10 @@ import kotlinx.coroutines.launch
 
 
 
-@Database(entities = arrayOf(cidade::class), version = 8, exportSchema = false)
+@Database(entities = arrayOf(nota::class), version = 8, exportSchema = false)
 public abstract class Db: RoomDatabase() {
 
-    abstract fun cidadedao(): cidadedao
+    abstract fun cidadedao(): notadao
 
     private class WordDatabaseCallback(
         private val scope: CoroutineScope
@@ -26,17 +26,6 @@ public abstract class Db: RoomDatabase() {
             INSTANCE?.let { database ->
                 scope.launch {
                     var cidadedao = database.cidadedao()
-
-                    // Delete all content here.
-                    cidadedao.deleteAll()
-
-                    // Add sample cities.
-                    var cidade = cidade(1, "Viana do Castelo", "Portugal")
-                    cidadedao.insert(cidade)
-                    cidade = cidade(2, "Porto", "Portugal")
-                    cidadedao.insert(cidade)
-                    cidade = cidade(3, "Aveiro", "Portugal")
-                    cidadedao.insert(cidade)
 
                 }
             }
